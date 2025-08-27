@@ -51,7 +51,6 @@ int[] 돌의 내구도 = {5,3,4,1,3,8,3};
 생존자 : ["루비독,"씨-독""]*/
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 class 독 {
     String 이름;
@@ -68,7 +67,7 @@ class 독 {
 }
 public class Q2 {
     public static void main(String[] args) {
-        int[] 돌의내구도 = {5,3,4,1,3,8,3};
+        int[] 돌의내구도 = {1, 2, 1, 4};
         독[] 독배열 = {
                 new 독("루비독", "95년생", 3, 4),
                 new 독("피치독", "95년생", 3, 3),
@@ -79,6 +78,27 @@ public class Q2 {
     }
     public static void solution(int[] 돌의내구도, 독[] 독배열){
         ArrayList<String> as = new ArrayList<String>();
+        for(독 i : 독배열) {
+            int 독의위치 = 0;
+            boolean flag = true;
 
+            while (독의위치 < 돌의내구도.length){
+                독의위치 += i.점프력;
+
+                if(독의위치 > 돌의내구도.length){
+                    break;
+                }
+                돌의내구도[독의위치 -1 ] -= i.몸무게;
+                if(돌의내구도[독의위치 - 1] < 0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag) {
+                as.add(i.이름);
+            }
+        }
+        System.out.println(as);
     }
 }
+
