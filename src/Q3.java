@@ -25,15 +25,34 @@ int 대이인원 = 12000202
 
 public class Q3 {
     public static void main(String[] args) {
-        int 대기인원 = 14000605;
-        solution(대기인원);
+        int waitPeople = 14000605;
+        solution(waitPeople);
     }
-    public static void solution(int 대기인원){
-        int 일수 = 0;
+    public static void solution(int waitPeople){
+        int days = 0;
 
         for(int i = 10; i > 0; i--){
-            일수 += (int)Math.pow(2,i);
-            System.out.println(일수);
+            days += (int)Math.pow(2,i);
+            System.out.println(days);
         }
+
+        int waitDay = waitPeople /1200;
+        int year = waitDay / days;
+        int leftDays = waitDay % days;
+        int month = 0;
+
+        for(int i = 10; i > 0; i++) {
+            month++;
+            if(leftDays < (int)Math.pow(2, i)){
+                break;
+            }
+            leftDays -= (int)Math.pow(2, i);
+        }
+        int day = leftDays;
+        int lastPeople = waitPeople % 1200;
+        int clock = lastPeople / 100 + 9;
+        int[] startMinute = {25, 40, 55, 70, 85, 100};
+        int boardingTime = lastPeople % 100 + 1;
+        int startOnTheTime = 0;
     }
 }
