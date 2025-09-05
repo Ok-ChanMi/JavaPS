@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class Collection {
+public class Collection1 {
     public static void main(String[] args) {
         // use primitive type
         int i = 0;
@@ -30,5 +30,12 @@ public class Collection {
         Stack<Long> stack = new Stack<>();
         Queue<Float> queue = new ArrayDeque<>();
         ArrayDeque<Double> arrayDeque = new ArrayDeque<>();
+
+        /*
+        * 컬렉션 프레임워크는 제네릭 기반
+        * 제네릭은 객체만 받는다고 규칙이 정해져 있어서 컬렉션프레임워크에 프리미티브 타입은 불가능
+        * + 컬렉션프레임워크에서 컴파일 할때 object로 저장해서 컴파일러가 자동으로 캐스팅한다?
+        *   그래서 프리미티브는 주소도 없는 그냥 값이라 불가능
+        * */
     }
 }
