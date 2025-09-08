@@ -21,5 +21,14 @@ public class HashMap1 {
         } else {
             System.out.println(key + "는 해시맵에 없습니다.");
         }
+
+        //  해시맵 수정
+        map.put("banana", 4);
+        System.out.println(map);
+
+        // 해시맵 삭제
+        map.remove("orange");
+        System.out.println(map);
+
     }
 }
