@@ -11,7 +11,7 @@ public class Immutable {
         System.out.println(string1);
 
         String string2 = "Hello";
-        string2 = string2.replace("l", "");
+        string2 = string2.replace("l", "");  // "l"을 모두 삭제
         System.out.println(string2);
     }
 }
